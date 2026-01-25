@@ -1,35 +1,43 @@
-# 🚚 Supply Chain Analytics: Western Europe Delivery Performance
+# Supply Chain Performance & Logistics Analytics
 
-## 📌 Project Overview
-This end-to-end data project analyzes logistics performance and revenue trends for the **Western Europe** region. By integrating Python for data engineering, SQL for complex analysis, and Power BI for visualization, I identified key delivery bottlenecks and revenue drivers.
-
-## 📊 Dashboard Preview
-![Supply Chain Dashboard](dashboard_preview.png)
-*Interactive Power BI Dashboard featuring custom UI/UX design with soft shadows and centered KPIs.*
-
-## 🛠️ Technical Workflow
-
-### 1. Data Engineering (Python)
-* **Script:** `shrink_data.py`
-* **Logic:** Processed a large-scale supply chain dataset using **Pandas**.
-* **Optimization:** Filtered data specifically for Western Europe and handled missing values to ensure a clean, performant `.csv` for visualization.
-
-### 2. Data Analysis (SQL)
-* **Scripts:** `3_Analysis_Queries.sql` & `extraction_logic.sql`
-* **Metrics:** Calculated late delivery risks and aggregated order totals by category.
-* **Insights:** Provided the mathematical foundation for the dashboard's "Late Delivery Rate".
-
-### 3. Business Intelligence (Power BI)
-* **File:** `supply_chain_analytics_western_europe.pbix`
-* **DAX Measures:** Developed custom logic for `% Late Delivery Rate` and `Total Revenue`.
-* **UI/UX Design:** Implemented a clean, professional layout using card-level shadows, zentried KPI's, and interactive slicers for `Customer City` and `Payment Type`.
-
-## 💡 Key Business Insights
-* **Risk Concentration:** Categories like **Fitness Accessories** and **Golf** exhibit significantly higher delivery risks (>60% in specific cities).
-* **Revenue Monitoring:** Enabled real-time tracking of regional revenue, currently totaling over **58 Billion** in the analyzed subset.
-
-## 📐 Architecture Note
-This project utilizes a **denormalized data model** to optimize portability and performance within GitHub. For enterprise-scale applications, I am familiar with transitioning these models into a **Star Schema** with dedicated Fact and Dimension tables.
+This project provides a deep dive into supply chain efficiency, focusing on delivery reliability and revenue trends. It has been optimized for portability and real-world data consistency.
 
 ---
-*Created as part of my Data Analytics Portfolio.*
+
+## 📊 Dashboard Highlights: US Market Logistics
+The dashboard visualizes key performance indicators (KPIs) for the North American market, specifically analyzing delivery risks and financial outcomes.
+
+### Key Features:
+* **Late Delivery Rate:** Identification of high-risk product categories and cities.
+* **Revenue Analysis:** Deep dive into "Total Revenue" by category and region.
+* **Geographical Insights:** Visual mapping of customer locations and their delivery status.
+
+**Dashboard Preview:**
+![Supply Chain Dashboard](dashboard_v2_supplychain.png) 
+*(Note: Replace with your actual filename if different)*
+
+---
+
+## 🌐 Cloud-Integrated Data Pipeline
+To ensure maximum portability, this project uses a modern data architecture that removes local file dependencies.
+
+### Technical Implementation:
+* **GitHub-Hosted Data:** The dashboard fetches its source data directly from this GitHub repository using `Web.Contents` in Power Query.
+* **Zero-Configuration Refresh:** Anyone who clones this repository can click "Refresh" in Power BI and the data will load instantly without needing to fix file paths.
+* **Robust M-Code:** * Implemented `en-US` culture settings to ensure decimal numbers (Revenue) are handled correctly on all systems.
+    * Dynamically handled column promotions to increase query stability.
+* **Data Consistency:** The header and visualizations were updated to reflect **US Market** data, ensuring alignment between titles and the underlying city/state data.
+
+---
+
+## ⚙️ How to Run
+1. **Clone the repository.**
+2. **Open the file:** Launch `Supply_Chain_Analysis.pbix` (or your specific filename) in Power BI Desktop.
+3. **Refresh:** Simply click the **Refresh** button on the Home ribbon. No local CSV setup is required.
+
+---
+
+## 🛠️ Tech Stack
+* **Power BI:** Data visualization and UX design.
+* **Power Query (M):** Data transformation and Web-API integration.
+* **GitHub:** Data hosting and version control.
